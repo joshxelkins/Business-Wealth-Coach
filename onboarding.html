@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Onboarding — Business Wealth Coach</title>
+<style>
+:root{--bg:#050505;--panel:#080808;--line:rgba(18,223,227,.24);--blue:#12dfe3;--pink:#f43c7b;--muted:#aaa}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#fff;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.08;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}
+.shell{width:min(1180px,calc(100% - 48px));margin:auto;position:relative;z-index:3}
+.page-glow{position:fixed;inset:0;pointer-events:none;z-index:1;mix-blend-mode:screen}
+.page-glow:before,.page-glow:after{content:"";position:absolute;border-radius:50%;filter:blur(110px);opacity:.16;will-change:transform}
+.page-glow:before{width:520px;height:520px;background:var(--blue);transform:translate3d(calc(var(--gx,50vw) - 260px),calc(var(--gy,50vh) - 260px),0)}
+.page-glow:after{width:360px;height:360px;background:var(--pink);opacity:.1;transform:translate3d(calc(var(--gx2,50vw) - 180px),calc(var(--gy2,50vh) - 180px),0)}
+nav{height:82px;display:flex;align-items:center;justify-content:space-between}
+.brand-logo{display:block;width:230px;height:auto}
+.nav-actions{display:flex;gap:12px;align-items:center}
+.pill{max-width:100%;padding:13px 19px;border-radius:999px;border:1px solid rgba(18,223,227,.52);color:#e8ffff;display:inline-flex;justify-content:center;align-items:center;gap:10px;text-align:center;line-height:1.2;transition:.25s;box-shadow:0 0 0 1px rgba(18,223,227,.08) inset}
+.pill.light{background:var(--pink);color:#fff;border-color:var(--pink);box-shadow:0 16px 44px rgba(244,60,123,.24)}
+.pill.secondary{background:rgba(18,223,227,.08);border-color:rgba(18,223,227,.5)}
+.pill:hover{transform:translateY(-2px);border-color:var(--blue);box-shadow:0 0 0 1px rgba(18,223,227,.18) inset,0 0 30px rgba(18,223,227,.18)}
+.hero{padding:52px 0 92px}
+.onboarding-panel{display:grid;grid-template-columns:.85fr 1.15fr;gap:1px;overflow:hidden;border:1px solid var(--line);border-radius:28px;background:rgba(18,223,227,.18);box-shadow:0 30px 90px rgba(0,0,0,.28),0 0 70px rgba(244,60,123,.05)}
+.onboarding-copy,.onboarding-form{background:rgba(8,8,8,.96);padding:38px}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:var(--pink);font-weight:800}
+h1{font-size:clamp(50px,7vw,92px);line-height:.9;letter-spacing:-.07em;margin:16px 0 24px;max-width:620px}
+h1 span{color:var(--blue)}
+.lead{max-width:560px;color:#c8c8c8;font-size:19px;line-height:1.5}
+.copy-card{margin-top:34px;padding:22px;border:1px solid rgba(18,223,227,.18);border-radius:20px;background:linear-gradient(135deg,rgba(18,223,227,.08),rgba(244,60,123,.06) 52%,rgba(12,12,12,.94))}
+.copy-card h2{font-size:26px;letter-spacing:-.045em;margin:0 0 10px}
+.copy-card p{margin:0;color:var(--muted);line-height:1.5}
+.onboarding-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.form-field{display:grid;gap:8px}
+.form-field.full{grid-column:1 / -1}
+.form-field label{color:#dffeff;font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.form-field input,.form-field select,.form-field textarea{width:100%;border:1px solid rgba(255,255,255,.16);border-radius:14px;background:rgba(255,255,255,.055);color:#fff;font:inherit;min-height:48px;padding:12px 14px;outline:none}
+.form-field select option{color:#0b0b0b}
+.form-field textarea{min-height:132px;resize:vertical}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(18,223,227,.12)}
+.form-note{grid-column:1 / -1;color:#8d8d8d;font-size:13px;line-height:1.45;margin:0}
+.onboarding-form .pill{width:max-content;border:0;cursor:pointer;font-weight:800}
+footer{padding:0 0 42px;color:#888}
+footer .shell{display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid #1e1e1e;padding-top:28px}
+footer a{color:#dffeff}
+::selection{background:var(--pink);color:#fff}
+@media(max-width:850px){
+  .shell{width:min(100% - 28px,1180px)}
+  .brand-logo{width:180px}
+  .nav-actions .pill.secondary{display:none}
+  .onboarding-panel,.onboarding-form{grid-template-columns:1fr}
+  .onboarding-copy,.onboarding-form{padding:28px}
+  .hero{padding-top:28px}
+  footer .shell{align-items:flex-start;flex-direction:column}
+}
+</style>
+</head>
+<body>
+<div class="page-glow" aria-hidden="true"></div>
+
+<nav class="shell">
+    <a href="index.html" aria-label="Business Wealth Coach home"><img class="brand-logo" src="business-wealth-coach-logo-light.webp" alt="Business Wealth Coach"></a>
+  <div class="nav-actions">
+    <a class="pill secondary" href="index.html">Back to site</a>
+    <a class="pill light" href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">Got a question? Let's chat!</a>
+  </div>
+</nav>
+
+<main class="hero">
+  <div class="shell onboarding-panel">
+    <section class="onboarding-copy">
+      <div class="eyebrow">READY TO START?</div>
+      <h1>Complete our <span>onboarding.</span></h1>
+      <p class="lead">Share a few details about your business, the support you are interested in and what you want to improve. Your answers will open in WhatsApp so we can move quickly from onboarding to discovery call.</p>
+      <div class="copy-card">
+        <h2>No slow emails.</h2>
+        <p>This gives us the useful context upfront, then keeps the next step direct and human on WhatsApp.</p>
+      </div>
+    </section>
+
+    <form class="onboarding-form" id="onboardingForm">
+      <div class="form-field">
+        <label for="onboard-name">Name</label>
+        <input id="onboard-name" name="name" autocomplete="name" required>
+      </div>
+      <div class="form-field">
+        <label for="onboard-whatsapp">WhatsApp number</label>
+        <input id="onboard-whatsapp" name="whatsapp" autocomplete="tel" required>
+      </div>
+      <div class="form-field">
+        <label for="onboard-business">Business name</label>
+        <input id="onboard-business" name="business" autocomplete="organization" required>
+      </div>
+      <div class="form-field">
+        <label for="onboard-type">Business type</label>
+        <input id="onboard-type" name="businessType" placeholder="Coach, creator, gym owner or other" required>
+      </div>
+      <div class="form-field">
+        <label for="onboard-package">Package interest</label>
+        <select id="onboard-package" name="package">
+          <option value="Not sure yet">Not sure yet</option>
+          <option value="Starter">Starter</option>
+          <option value="Standard">Standard</option>
+          <option value="Signature">Signature</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="onboard-turnover">Current turnover</label>
+        <input id="onboard-turnover" name="turnover" placeholder="Rough monthly or annual figure">
+      </div>
+      <div class="form-field full">
+        <label for="onboard-priority">What do you want help with?</label>
+        <textarea id="onboard-priority" name="priority" placeholder="Tell me what is happening in the business and what you want to improve." required></textarea>
+      </div>
+      <p class="form-note">Submitting opens WhatsApp with your answers ready to send to Business Wealth Coach.</p>
+      <button class="pill light" type="submit">Send onboarding on WhatsApp</button>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <div class="shell">
+    <span>Business Wealth Coach</span>
+    <a href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">07957 401540</a>
+  </div>
+</footer>
+
+<script>
+const params=new URLSearchParams(window.location.search);
+const selectedPackage=params.get('package');
+const packageSelect=document.getElementById('onboard-package');
+if(selectedPackage && packageSelect && [...packageSelect.options].some(option=>option.value===selectedPackage)){
+  packageSelect.value=selectedPackage;
+}
+
+window.addEventListener('mousemove',e=>{
+  document.documentElement.style.setProperty('--gx', `${e.clientX}px`);
+  document.documentElement.style.setProperty('--gy', `${e.clientY}px`);
+  document.documentElement.style.setProperty('--gx2', `${e.clientX - 90}px`);
+  document.documentElement.style.setProperty('--gy2', `${e.clientY + 70}px`);
+});
+
+const onboardingForm=document.getElementById('onboardingForm');
+onboardingForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  const data=new FormData(onboardingForm);
+  const message=[
+    'Hi, I have completed the Business Wealth Coach onboarding.',
+    '',
+    `Name: ${data.get('name')}`,
+    `WhatsApp number: ${data.get('whatsapp')}`,
+    `Business name: ${data.get('business')}`,
+    `Business type: ${data.get('businessType')}`,
+    `Package interest: ${data.get('package')}`,
+    `Current turnover: ${data.get('turnover') || 'Not provided'}`,
+    '',
+    `What I want help with: ${data.get('priority')}`
+  ].join('\n');
+  window.location.href=`https://wa.me/447957401540?text=${encodeURIComponent(message)}`;
+});
+</script>
+</body>
+</html>

@@ -43,9 +43,12 @@ h1 span{color:var(--blue)}
 .form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(18,223,227,.12)}
 .form-note{grid-column:1 / -1;color:#8d8d8d;font-size:13px;line-height:1.45;margin:0}
 .onboarding-form .pill{width:max-content;border:0;cursor:pointer;font-weight:800}
-footer{padding:0 0 42px;color:#888}
-footer .shell{display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid #1e1e1e;padding-top:28px}
-footer a{color:#dffeff}
+footer{padding:70px 0 35px;position:relative;z-index:3}
+.footergrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px}
+footer a{display:block;color:#aaa;margin:10px 0}
+.footer-logo{display:block;width:min(330px,100%);height:auto;margin:0 0 20px}
+.footer-intro{color:#888;max-width:420px}
+.footer-social{display:flex;gap:12px;margin-top:14px}.social-link{width:42px;height:42px;margin:0;display:grid;place-items:center;border-radius:999px;border:1px solid rgba(18,223,227,.42);background:rgba(18,223,227,.07);color:#dffeff;transition:.25s}.social-link:hover{color:#fff;border-color:#f43c7b;box-shadow:0 0 28px rgba(244,60,123,.22)}.social-link svg{width:20px;height:20px;fill:currentColor}.footer-bottom{margin-top:42px;padding-top:22px;border-top:1px solid #1e1e1e;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#888;font-size:14px}.legal-links{display:flex;gap:18px;flex-wrap:wrap}.legal-links a{margin:0}
 ::selection{background:var(--pink);color:#fff}
 @media(max-width:850px){
   .shell{width:min(100% - 28px,1180px)}
@@ -54,7 +57,7 @@ footer a{color:#dffeff}
   .onboarding-panel,.onboarding-form{grid-template-columns:1fr}
   .onboarding-copy,.onboarding-form{padding:28px}
   .hero{padding-top:28px}
-  footer .shell{align-items:flex-start;flex-direction:column}
+  .footergrid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -121,13 +124,9 @@ footer a{color:#dffeff}
   </div>
 </main>
 
-<footer>
-  <div class="shell">
-    <span>Business Wealth Coach</span>
-    <a href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">07957 401540</a>
-  </div>
+<footer class="shell">
+  <div class="footergrid"><div><img class="footer-logo" src="business-wealth-coach-logo-light.webp" alt="Business Wealth Coach"><p class="footer-intro">Accounting, tax and business wealth coaching for coaches, creators, fitness entrepreneurs and gym owners who want to keep more of what they earn and build personal wealth.</p></div><div><b>Services</b><a href="index.html#who-i-help">Who we help</a><a href="index.html#difference">Why us</a><a href="index.html#packages">Packages</a><a href="index.html#top">Top</a></div><div><b>Contact</b><a href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">Got a question? Let's chat!</a><a href="onboarding.html">Ready to start? Complete our onboarding!</a></div><div><b>Follow</b><div class="footer-social"><a class="social-link" href="https://www.instagram.com/joshxelkins/" target="_blank" rel="noopener" aria-label="Business Wealth Coach on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.8A4.2 4.2 0 1 1 7.8 12 4.2 4.2 0 0 1 12 7.8Zm0 2A2.2 2.2 0 1 0 14.2 12 2.2 2.2 0 0 0 12 9.8Zm4.45-3.15a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/></svg></a><a class="social-link" href="https://www.youtube.com/@BusinessWealthCoach" target="_blank" rel="noopener" aria-label="Business Wealth Coach on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3.1 3.1 0 0 0-2.2-2.2C17.5 4.5 12 4.5 12 4.5s-5.5 0-7.4.5a3.1 3.1 0 0 0-2.2 2.2A32.4 32.4 0 0 0 2 12a32.4 32.4 0 0 0 .4 4.8A3.1 3.1 0 0 0 4.6 19c1.9.5 7.4.5 7.4.5s5.5 0 7.4-.5a3.1 3.1 0 0 0 2.2-2.2A32.4 32.4 0 0 0 22 12a32.4 32.4 0 0 0-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg></a></div></div></div><div class="footer-bottom"><span>© 2026 Business Wealth Coach Ltd. All rights reserved.</span><div class="legal-links"><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-policy.html">Cookie Policy</a></div></div>
 </footer>
-
 <script>
 const params=new URLSearchParams(window.location.search);
 const selectedPackage=params.get('package');

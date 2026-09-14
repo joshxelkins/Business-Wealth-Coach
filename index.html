@@ -58,7 +58,7 @@ h1 span{color:#12dfe3} .lead{font-size:clamp(18px,2vw,28px);line-height:1.25;max
 .comparison{border-top:1px solid #3b3b3b} .row{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid #2a2a2a;padding:24px 0;gap:20px} .row div:not(:first-child){font-size:18px}
 .cta{text-align:center;padding:140px 0;background:linear-gradient(120deg,#12dfe3 0%,#079fe8 50%,#111 100%);color:#101010;position:relative;overflow:hidden}
 .cta:before,.cta:after{content:"";position:absolute;border-radius:50%;filter:blur(6px);opacity:.35} .cta:before{width:340px;height:340px;background:#f43c7b;left:-80px;top:-110px} .cta:after{width:420px;height:420px;background:#12dfe3;right:-130px;bottom:-180px}
-.cta h2{position:relative;z-index:1;font-size:clamp(62px,8vw,126px)} footer{padding:70px 0 35px} .footergrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px} footer a{display:block;color:#aaa;margin:10px 0}
+.cta h2{position:relative;z-index:1;font-size:clamp(62px,8vw,126px)} footer{padding:70px 0 35px} .footergrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px} footer a{display:block;color:#aaa;margin:10px 0}.footer-social{display:flex;gap:12px;margin-top:14px}.social-link{width:42px;height:42px;margin:0;display:grid;place-items:center;border-radius:999px;border:1px solid rgba(18,223,227,.42);background:rgba(18,223,227,.07);color:#dffeff;transition:.25s}.social-link:hover{color:#fff;border-color:#f43c7b;box-shadow:0 0 28px rgba(244,60,123,.22)}.social-link svg{width:20px;height:20px;fill:currentColor}.footer-bottom{margin-top:42px;padding-top:22px;border-top:1px solid #1e1e1e;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#888;font-size:14px}.legal-links{display:flex;gap:18px;flex-wrap:wrap}.legal-links a{margin:0}
 .reveal{opacity:1;transform:none;transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)} .animate-ready .reveal{opacity:0;transform:translateY(42px)} .animate-ready .reveal.in{opacity:1;transform:none}
 .floatblob{position:absolute;border-radius:50%;filter:blur(1px);pointer-events:none;will-change:transform} .b1{width:160px;height:160px;background:#f43c7b;top:17%;left:5%;opacity:.3} .b2{width:100px;height:100px;background:#12dfe3;bottom:20%;right:8%;opacity:.3}
 @media(max-width:850px){.links{display:none} .shell{width:min(100% - 28px,1380px)} .hero{min-height:720px;padding-top:45px} .hero-bg:after{width:110%;height:55%;right:-38%;top:35%;opacity:.45} .metrics{gap:20px;flex-wrap:wrap;margin-top:55px} .intro,.split,.footergrid{grid-template-columns:1fr} .projects,.services,.cards3{grid-template-columns:1fr} .browserimg{height:76vw} .split-art{min-height:480px} .cursor,.cursor2{display:none} .section{padding:84px 0}}
@@ -226,10 +226,11 @@ body{background:#000;color:#fff}
 .package-price{color:#f43c7b;font-weight:900;margin:8px 0 6px;font-size:30px;letter-spacing:-.035em}
 .package-price span{font-size:16px;color:#fff}
 .package-price s{color:#d26492;text-decoration-color:#f43c7b;text-decoration-thickness:2px}
-.package-offer{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;margin:0 0 18px;color:#b8b8b8;font-size:14px;line-height:1.35}
+.package-offer{display:grid;gap:5px;margin:0 0 18px;color:#b8b8b8;font-size:14px;line-height:1.35}
 .package-offer strong{color:#f43c7b;font-size:22px;font-weight:900;letter-spacing:-.03em}
 .package-offer strong span{font-size:14px;color:#fff}
 .package-offer em{color:#12dfe3;font-style:normal;font-weight:900}
+.package-offer .offer-note{display:block;width:100%;max-width:none;font-size:14px;line-height:1.3}
 .featured-package{border-color:#12dfe3;transform:translateY(-14px);box-shadow:0 0 0 1px rgba(18,223,227,.28) inset,0 0 90px rgba(18,223,227,.12);background:linear-gradient(180deg,#111 0%,#0b0b0b 100%)}
 .premium-package{border-color:rgba(244,60,123,.42);box-shadow:0 0 0 1px rgba(244,60,123,.14) inset,0 0 70px rgba(244,60,123,.08)}
 .package-note{color:#858585;font-size:13px;line-height:1.45;margin:24px 0 0}
@@ -781,7 +782,6 @@ footer{
     <div class="eyebrow reveal">FINANCE FOR BUSINESS OWNERS</div>
     <h1 class="reveal">More from your business.<br><span>More for your future.</span></h1>
     <p class="lead reveal">Strategic accountancy and tax advice for business owners who want to keep more of what they earn, make better financial decisions and build long-term personal wealth.</p>
-    <div class="actions reveal"><a class="pill light magnetic" href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">Got a question? Let's chat!</a><a class="pill magnetic" href="onboarding.html">Ready to start? Complete our onboarding!</a></div>
   </div>
 </section>
 
@@ -791,7 +791,7 @@ footer{
       <div class="eyebrow">SPECIALIST FOCUS, OPEN TO ALL</div>
       <h2>Coaches, creators, fitness entrepreneurs and gym owners.</h2>
       <strong>Accountant. Bodybuilder.<br>Business Wealth Coach.</strong>
-      <p>We specialise in fitness-led businesses like these, but I am keen to work with ambitious owners from any sector, particularly those with an interest in fitness. The work goes beyond filing accounts for people who want sharper numbers, smarter tax planning, better profit decisions and a business that builds personal wealth.</p>
+      <p>We specialise in fitness-led businesses like these, but I am keen to work with ambitious owners from any sector. The work goes beyond filing accounts for people who want sharper numbers, smarter tax planning, better profit decisions and a business that builds personal wealth.</p>
       <div class="fit-line">Finance fuels freedom</div>
     </div>
 
@@ -801,31 +801,31 @@ footer{
         <article class="audience-card">
           <div>
             <h3>Coaches</h3>
-            <p>Pricing, delivery costs, owner pay, tax reserves and building income beyond one-to-one time.</p>
+            <p>Price for profit, manage delivery costs, pay yourself properly and build income beyond one-to-one coaching.</p>
           </div>
         </article>
         <article class="audience-card">
           <div>
             <h3>Creators</h3>
-            <p>Turning audience, offers and launches into profit, cash flow and a financial plan that lasts.</p>
+            <p>Turn your audience, offers and launches into consistent profit, stronger cash flow and a business that lasts.</p>
           </div>
         </article>
         <article class="audience-card">
           <div>
-            <h3>Fitness entrepreneurs</h3>
-            <p>Growth decisions, team structure, margins, recurring revenue and wealth outside the business.</p>
+            <h3>Fitness &amp; wellness businesses</h3>
+            <p>Build a financially stronger business with better pricing, clearer margins, smarter growth decisions and more predictable income.</p>
           </div>
         </article>
         <article class="audience-card">
           <div>
             <h3>Gym owners</h3>
-            <p>Rent, payroll, equipment, membership pricing, retention and cash-flow pressure.</p>
+            <p>Get control of rent, payroll, equipment, pricing and retention so you can protect margins and improve cash flow.</p>
           </div>
         </article>
         <article class="audience-card wide">
           <div>
             <h3>Ambitious owners from any sector</h3>
-            <p>If you want sharper numbers, smarter tax planning and a business that can build personal wealth, the same approach applies. A genuine interest in fitness is a bonus, not a requirement.</p>
+            <p>If you want sharper numbers, smarter tax planning and a business that can build personal wealth, the same approach applies. An interest in fitness is a bonus, not a requirement.</p>
           </div>
         </article>
       </div>
@@ -902,7 +902,7 @@ footer{
         <h3>Starter</h3>
         <div class="package-tagline">Build your base</div>
         <div class="package-price"><s>£150</s> <span>/ month</span></div>
-        <div class="package-offer"><strong>£90 <span>/ month</span></strong><em>40% off for the first 12 months</em></div>
+        <div class="package-offer"><strong>£90 <span>/ month</span></strong><em>Founding Client Offer (40% Off)</em><span class="offer-note">Introductory pricing for a limited number of new clients.<br>Once these places are filled, usual pricing will apply.</span></div>
         <p>For businesses that want the essentials handled properly, with clear monthly visibility over their financial performance.</p>
         <div class="package-position">Compliance + Visibility</div>
         <div class="package-inherits"><b>Included in Starter</b><span>The base package every tier is built from.</span></div>
@@ -924,7 +924,7 @@ footer{
         <h3>Standard</h3>
         <div class="package-tagline">Make consistent progress</div>
         <div class="package-price"><s>£250</s> <span>/ month</span></div>
-        <div class="package-offer"><strong>£150 <span>/ month</span></strong><em>40% off for the first 12 months</em></div>
+        <div class="package-offer"><strong>£150 <span>/ month</span></strong><em>Founding Client Offer (40% Off)</em><span class="offer-note">Introductory pricing for a limited number of new clients.<br>Once these places are filled, usual pricing will apply.</span></div>
         <p>For owners who want regular financial reviews, better visibility and proactive support before decisions are made.</p>
         <div class="package-position">Visibility + Guidance</div>
         <div class="package-inherits"><b>Includes all Starter features</b><span>Plus the extra support below.</span></div>
@@ -944,7 +944,7 @@ footer{
         <h3>Signature</h3>
         <div class="package-tagline">Maximise performance</div>
         <div class="package-price"><s>£350</s> <span>/ month</span></div>
-        <div class="package-offer"><strong>£210 <span>/ month</span></strong><em>40% off for the first 12 months</em></div>
+        <div class="package-offer"><strong>£210 <span>/ month</span></strong><em>Founding Client Offer (40% Off)</em><span class="offer-note">Introductory pricing for a limited number of new clients.<br>Once these places are filled, usual pricing will apply.</span></div>
         <p>For ambitious businesses that want a more complete outsourced finance function, with bookkeeping, planning and proactive financial insight.</p>
         <div class="package-position">Control + Planning + Performance</div>
         <div class="package-inherits"><b>Includes all Standard features</b><span>Plus the outsourced finance function support below.</span></div>
@@ -998,8 +998,8 @@ footer{
         <li>Ongoing deadlines and outstanding work</li>
       </ul>
       <p>You should not have to spend your time coordinating the move between two firms. We will manage the transition, keep you updated, and make sure the switch is as smooth as possible.</p>
-      <p class="switching-close">Ready to switch? Leave the handover to us.</p>
-      <a class="pill light magnetic" href="https://wa.me/447957401540?text=Hi%2C%20I%27m%20thinking%20about%20switching%20accountant%20and%20would%20like%20to%20talk%20through%20the%20handover.">Talk to us about switching →</a>
+      <p class="switching-close">Ready to switch? Complete the onboarding form below.</p>
+      <a class="pill light magnetic" href="onboarding.html">Let's start working together!</a>
     </div>
   </div>
 </section>
@@ -1105,9 +1105,8 @@ footer{
 </section>
 
 <footer class="shell">
-  <div class="footergrid"><div><img class="footer-logo" src="business-wealth-coach-logo-light.webp" alt="Business Wealth Coach"><p class="footer-intro">Accounting, tax and business wealth coaching for coaches, creators, fitness entrepreneurs and gym owners who want to keep more of what they earn and build personal wealth.</p></div><div><b>Services</b><a href="#who-i-help">Who we help</a><a href="#difference">Why us</a><a href="#packages">Packages</a><a href="#top">Top</a></div><div><b>Contact</b><a href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">Got a question? Let's chat!</a><a href="onboarding.html">Ready to start? Complete our onboarding!</a></div></div>
+  <div class="footergrid"><div><img class="footer-logo" src="business-wealth-coach-logo-light.webp" alt="Business Wealth Coach"><p class="footer-intro">Accounting, tax and business wealth coaching for coaches, creators, fitness entrepreneurs and gym owners who want to keep more of what they earn and build personal wealth.</p></div><div><b>Services</b><a href="#who-i-help">Who we help</a><a href="#difference">Why us</a><a href="#packages">Packages</a><a href="#top">Top</a></div><div><b>Contact</b><a href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">Got a question? Let's chat!</a><a href="onboarding.html">Ready to start? Complete our onboarding!</a></div><div><b>Follow</b><div class="footer-social"><a class="social-link" href="https://www.instagram.com/joshxelkins/" target="_blank" rel="noopener" aria-label="Business Wealth Coach on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.8A4.2 4.2 0 1 1 7.8 12 4.2 4.2 0 0 1 12 7.8Zm0 2A2.2 2.2 0 1 0 14.2 12 2.2 2.2 0 0 0 12 9.8Zm4.45-3.15a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/></svg></a><a class="social-link" href="https://www.youtube.com/@BusinessWealthCoach" target="_blank" rel="noopener" aria-label="Business Wealth Coach on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3.1 3.1 0 0 0-2.2-2.2C17.5 4.5 12 4.5 12 4.5s-5.5 0-7.4.5a3.1 3.1 0 0 0-2.2 2.2A32.4 32.4 0 0 0 2 12a32.4 32.4 0 0 0 .4 4.8A3.1 3.1 0 0 0 4.6 19c1.9.5 7.4.5 7.4.5s5.5 0 7.4-.5a3.1 3.1 0 0 0 2.2-2.2A32.4 32.4 0 0 0 22 12a32.4 32.4 0 0 0-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg></a></div></div></div><div class="footer-bottom"><span>© 2026 Business Wealth Coach Ltd. All rights reserved.</span><div class="legal-links"><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-policy.html">Cookie Policy</a></div></div>
 </footer>
-
 <script>
 document.documentElement.classList.add('animate-ready');
 const c=document.querySelector('.cursor'),c2=document.querySelector('.cursor2');

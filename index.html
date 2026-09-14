@@ -5,7 +5,37 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="shortcut icon" href="favicon.ico">
-<title>Business Wealth Coach — Strategic Accountancy and Tax Advice</title>
+<!-- SEO -->
+<meta name="description" content="Strategic accountancy, tax and business wealth coaching for coaches, creators, fitness businesses and gym owners who want to turn profit into personal wealth.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://business-wealth-coach.vercel.app/">
+<meta property="og:site_name" content="Business Wealth Coach">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Business Wealth Coach | Accountancy, Tax & Profit-to-Wealth Advice">
+<meta property="og:description" content="Strategic accountancy, tax and business wealth coaching for coaches, creators, fitness businesses and gym owners who want to turn profit into personal wealth.">
+<meta property="og:url" content="https://business-wealth-coach.vercel.app/">
+<meta property="og:image" content="https://business-wealth-coach.vercel.app/hero-accounting-fitness.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Business Wealth Coach | Accountancy, Tax & Profit-to-Wealth Advice">
+<meta name="twitter:description" content="Strategic accountancy, tax and business wealth coaching for coaches, creators, fitness businesses and gym owners who want to turn profit into personal wealth.">
+<meta name="twitter:image" content="https://business-wealth-coach.vercel.app/hero-accounting-fitness.webp">
+<meta name="theme-color" content="#050505">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AccountingService","name":"Business Wealth Coach","url":"https://business-wealth-coach.vercel.app/","logo":"https://business-wealth-coach.vercel.app/business-wealth-coach-logo-light.webp","image":"https://business-wealth-coach.vercel.app/hero-accounting-fitness.webp","slogan":"More from your business. More for your future.","description":"Strategic accountancy, tax and business wealth coaching for coaches, creators, fitness businesses and gym owners who want to turn profit into personal wealth.","areaServed":"United Kingdom","sameAs":["https://www.instagram.com/joshxelkins/","https://www.youtube.com/@BusinessWealthCoach"],"serviceType":["Accountancy","Tax planning","Business wealth coaching","Management accounts","Cash-flow planning"],"audience":{"@type":"Audience","audienceType":"Business owners, coaches, creators, fitness and wellness businesses, and gym owners"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Business Wealth Coach","url":"https://business-wealth-coach.vercel.app/","publisher":{"@type":"Organization","name":"Business Wealth Coach Ltd"}}</script>
+<!-- /SEO -->
+<!-- Analytics -->
+<script>
+window.va = window.va || function(){ (window.vaq = window.vaq || []).push(arguments); };
+window.va('beforeSend', function(event){
+  if (!event || !event.url) return event;
+  var url = new URL(event.url);
+  url.searchParams.delete('text');
+  return Object.assign({}, event, { url: url.toString() });
+});
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<!-- /Analytics -->
+<title>Business Wealth Coach | Accountancy, Tax & Profit-to-Wealth Advice</title>
 <style>
 :root{
   --ink:#0b0b0b;--paper:#f2efe7;--acid:#12dfe3;--violet:#12dfe3;--pink:#f43c7b;
@@ -1147,4 +1177,92 @@ setTimeout(()=>document.querySelectorAll('.reveal').forEach(x=>x.classList.add('
 const split=document.getElementById('splitArt');
 if(split){split.addEventListener('mousemove',e=>{let r=split.getBoundingClientRect();split.style.setProperty('--sx',`${(e.clientX-r.left)/r.width*100}%`);split.style.setProperty('--sy',`${(e.clientY-r.top)/r.height*100}%`)})};
 </script>
+<!-- Site event tracking -->
+<script>
+(function(){
+  function clean(value){
+    return String(value || '').replace(/\s+/g,' ').trim().slice(0,120);
+  }
+  function pagePath(){
+    var path = window.location.pathname || '/';
+    return path === '/' ? '/index.html' : path;
+  }
+  function sectionName(element){
+    var section = element.closest('section[id], footer, nav, main');
+    if (!section) return 'page';
+    if (section.id) return section.id;
+    return section.tagName.toLowerCase();
+  }
+  window.trackSiteEvent = function(name, data){
+    var payload = Object.assign({ page: pagePath() }, data || {});
+    if (window.va) window.va('event', { name: name, data: payload });
+  };
+  document.addEventListener('click', function(event){
+    var link = event.target.closest && event.target.closest('a[href]');
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+    var absoluteHref = link.href || href;
+    var locationName = sectionName(link);
+    var eventName = '';
+    var data = { location: locationName };
+    if (href.indexOf('wa.me/') !== -1 || absoluteHref.indexOf('wa.me/') !== -1) {
+      eventName = 'WhatsApp Click';
+      data.intent = absoluteHref.indexOf('question') !== -1 ? 'question' : 'chat';
+    } else if (href.indexOf('onboarding.html') !== -1) {
+      eventName = locationName === 'packages' ? 'Package Onboarding Click' : 'Onboarding Click';
+      try {
+        var url = new URL(absoluteHref, window.location.href);
+        if (url.searchParams.get('package')) data.package_interest = clean(url.searchParams.get('package'));
+      } catch(error) {}
+    } else if (absoluteHref.indexOf('instagram.com') !== -1) {
+      eventName = 'Social Click';
+      data.platform = 'instagram';
+    } else if (absoluteHref.indexOf('youtube.com') !== -1) {
+      eventName = 'Social Click';
+      data.platform = 'youtube';
+    } else if (href.charAt(0) === '#') {
+      eventName = 'Navigation Click';
+      data.target = clean(href);
+    }
+    if (!eventName) return;
+    window.trackSiteEvent(eventName, data);
+    if ((href.indexOf('wa.me/') !== -1 || absoluteHref.indexOf('wa.me/') !== -1) && !event.defaultPrevented && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && link.target !== '_blank') {
+      event.preventDefault();
+      window.setTimeout(function(){ window.location.href = absoluteHref; }, 160);
+    }
+  });
+  var form = document.getElementById('onboardingForm');
+  if (form) {
+    var started = false;
+    var sentMilestones = {};
+    var fields = Array.prototype.slice.call(form.querySelectorAll('input, select, textarea'));
+    function completionPercent(){
+      var complete = fields.filter(function(field){ return clean(field.value).length > 0; }).length;
+      return Math.round((complete / fields.length) * 100);
+    }
+    function selectedPackage(){
+      var field = form.querySelector('[name="package"]');
+      return field ? clean(field.value) : 'Not set';
+    }
+    function markProgress(){
+      if (!started) {
+        started = true;
+        window.trackSiteEvent('Onboarding Started', { package_interest: selectedPackage() });
+      }
+      var percent = completionPercent();
+      [25,50,75,100].forEach(function(milestone){
+        if (percent >= milestone && !sentMilestones[milestone]) {
+          sentMilestones[milestone] = true;
+          window.trackSiteEvent('Onboarding Progress', { completion_percent: milestone, package_interest: selectedPackage() });
+        }
+      });
+    }
+    form.addEventListener('input', markProgress);
+    form.addEventListener('change', markProgress);
+    var prefill = new URLSearchParams(window.location.search).get('package');
+    if (prefill) window.trackSiteEvent('Onboarding Prefilled', { package_interest: clean(prefill) });
+  }
+})();
+</script>
+<!-- /Site event tracking -->
 </body></html>

@@ -256,6 +256,17 @@ body{background:#000;color:#fff}
 .package-inherits b{display:block;color:#fff;margin-bottom:3px}
 .package-inherits + .package-features{margin-top:14px}
 .package-card .pill{width:max-content}
+.self-employed-heading{margin:34px 0 18px}
+.self-employed-heading h3,.limited-package-intro h3{font-size:clamp(32px,4vw,52px);line-height:1;letter-spacing:-.045em;margin:8px 0 0}
+.self-employed-package{margin-bottom:34px;min-height:auto;display:grid;grid-template-columns:.72fr 1fr 1.45fr;gap:30px;align-items:start;border-color:rgba(18,223,227,.42);box-shadow:0 0 0 1px rgba(18,223,227,.12) inset,0 0 80px rgba(18,223,227,.08)}
+.self-employed-package:before{background:linear-gradient(135deg,#12dfe3,#f43c7b);opacity:.16}
+.self-employed-copy{display:flex;flex-direction:column;gap:16px}
+.self-employed-copy p{margin:0}
+.self-employed-package .package-features{grid-template-columns:repeat(2,minmax(0,1fr));margin:0 0 18px}
+.self-employed-note{margin:0;padding:16px 18px;border-radius:18px;border:1px solid rgba(244,60,123,.24);background:rgba(244,60,123,.07);color:#cfcfcf;line-height:1.5}
+.self-employed-note b{display:block;color:#fff;margin-bottom:5px}
+.limited-package-intro{display:grid;grid-template-columns:1fr .75fr;gap:28px;align-items:end;margin:46px 0 22px}
+.limited-package-intro p{margin:0;color:#aaa;line-height:1.5;font-size:18px}
 .package-cta-stack{margin-top:auto;display:grid;gap:12px;align-items:start}
 .package-question{margin:0;color:#fff;font-weight:900;font-size:15px;line-height:1.35}
 .package-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
@@ -492,6 +503,8 @@ body{background:#000;color:#fff}
 
 @media(max-width:850px){
   .package-grid,.journey-track,.difference-grid{grid-template-columns:1fr}
+  .self-employed-package,.limited-package-intro{grid-template-columns:1fr}
+  .self-employed-package .package-features{grid-template-columns:1fr}
   .wealth-statement{padding:50px 24px}
   .difference-title{position:static}
   .difference-list{grid-template-columns:1fr}
@@ -812,7 +825,14 @@ footer{
 }
 
 </style>
-</head>
+<link rel="preconnect" href="https://assets.calendly.com">
+<link rel="preconnect" href="https://calendly.com">
+<link rel="dns-prefetch" href="//assets.calendly.com">
+<link rel="dns-prefetch" href="//calendly.com">
+<!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<!-- Calendly link widget end --></head>
 <body>
 <div class="page-glow" aria-hidden="true"></div>
 <div class="cursor"></div><div class="cursor2"></div>
@@ -940,9 +960,48 @@ footer{
         <div class="eyebrow">CORE PACKAGES</div>
         <h2>Choose the level of support that matches your business.</h2>
       </div>
-      <p>Starter sets the base. Standard and Signature clearly show what they add on top, so you can see the value step by step.</p>
+      <p>Whether you’re self-employed or already trading through a limited company, start with the package that fits where your business is now.</p>
     </div>
 
+    <div class="self-employed-heading reveal">
+      <div class="eyebrow">Self-employed? Start here.</div>
+    </div>
+
+    <article class="package-card self-employed-package tilt reveal">
+      <div>
+        <span class="num">SELF-EMPLOYED</span>
+        <h3>Self-employed</h3>
+        <div class="package-tagline">Keep it simple.<br>Get it right.</div>
+        <div class="package-price"><s>£100</s> <span>/ month</span></div>
+        <div class="package-offer"><strong>£60 <span>/ month</span></strong><em>Founding Client Offer (40% Off)</em></div>
+      </div>
+      <div class="self-employed-copy">
+        <p>For sole traders and self-employed business owners who want their accounts and tax handled properly without the complexity of a limited company.</p>
+        <div class="package-position">Everything you need to stay on top of your finances</div>
+        <div class="self-employed-note"><b>Thinking about going Ltd later?</b><span>As your business grows, we’ll help you understand when a limited company may be appropriate and make the transition straightforward.</span></div>
+      </div>
+      <div>
+        <ul class="package-features">
+          <li><span class="feature-status included">✓</span><span>Self Assessment Tax Return</span></li>
+          <li><span class="feature-status included">✓</span><span>Annual Accounts</span></li>
+          <li><span class="feature-status included">✓</span><span>Tax calculation &amp; planning</span></li>
+          <li><span class="feature-status included">✓</span><span>Monthly bookkeeping / transaction review</span></li>
+          <li><span class="feature-status included">✓</span><span>HMRC correspondence support</span></li>
+          <li><span class="feature-status included">✓</span><span>WhatsApp accountancy support</span></li>
+          <li><span class="feature-status included">✓</span><span>Annual business review</span></li>
+          <li><span class="feature-status included">✓</span><span>Advice when it’s time to consider going limited</span></li>
+        </ul>
+        <div class="package-cta-stack"><p class="package-question">Ready to get started?</p><div class="package-actions"><a class="pill light magnetic" href="onboarding.html">Get started</a><a class="pill secondary magnetic" href="https://wa.me/447957401540?text=Hi%2C%20I%27m%20self-employed%20and%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">WhatsApp me</a></div></div>
+      </div>
+    </article>
+
+    <div class="limited-package-intro reveal">
+      <div>
+        <div class="eyebrow">Already running a limited company?</div>
+        <h3>Choose the level of support your business needs.</h3>
+      </div>
+      <p>Starter sets the base. Standard and Signature clearly show what they add on top, so you can see the value step by step.</p>
+    </div>
     <div class="package-grid">
       <article class="package-card tilt reveal">
         <span class="num">01</span>
@@ -1299,8 +1358,4 @@ if(split){split.addEventListener('mousemove',e=>{let r=split.getBoundingClientRe
   }
 })();
 </script>
-<!-- /Site event tracking -->
-<!-- Calendly link widget begin -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<!-- Calendly link widget end --></body></html>
+<!-- /Site event tracking --></body></html>

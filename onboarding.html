@@ -91,7 +91,14 @@ footer a{display:block;color:#aaa;margin:10px 0}
   .footergrid{grid-template-columns:1fr}
 }
 </style>
-</head>
+<link rel="preconnect" href="https://assets.calendly.com">
+<link rel="preconnect" href="https://calendly.com">
+<link rel="dns-prefetch" href="//assets.calendly.com">
+<link rel="dns-prefetch" href="//calendly.com">
+<!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<!-- Calendly link widget end --></head>
 <body>
 <div class="page-glow" aria-hidden="true"></div>
 
@@ -140,6 +147,7 @@ footer a{display:block;color:#aaa;margin:10px 0}
         <label for="onboard-package">Package interest</label>
         <select id="onboard-package" name="package">
           <option value="Not sure yet">Not sure yet</option>
+          <option value="Self-employed">Self-employed</option>
           <option value="Starter">Starter</option>
           <option value="Standard">Standard</option>
           <option value="Signature">Signature</option>
@@ -351,9 +359,5 @@ if(onboardingForm){
   }
 })();
 </script>
-<!-- /Site event tracking -->
-<!-- Calendly link widget begin -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<!-- Calendly link widget end --></body>
+<!-- /Site event tracking --></body>
 </html>

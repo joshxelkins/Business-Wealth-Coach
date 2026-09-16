@@ -6,21 +6,21 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="shortcut icon" href="favicon.ico">
 <!-- SEO -->
-<meta name="description" content="Strategic accountancy, tax and business wealth coaching for coaches, creators, fitness businesses and gym owners who want to turn profit into personal wealth.">
+<meta name="description" content="Strategic accountancy, tax and business wealth coaching for coaches, creators, fitness businesses and gym owners who want to turn profit into personal wealth. Book a call, message on WhatsApp or start onboarding online.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://business-wealth-coach.vercel.app/">
 <meta property="og:site_name" content="Business Wealth Coach">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Business Wealth Coach | Accountancy, Tax & Profit-to-Wealth Advice">
-<meta property="og:description" content="Strategic accountancy, tax and business wealth coaching for coaches, creators, fitness businesses and gym owners who want to turn profit into personal wealth.">
+<meta property="og:description" content="Strategic accountancy, tax and business wealth coaching for coaches, creators, fitness businesses and gym owners who want to turn profit into personal wealth. Book a call, message on WhatsApp or start onboarding online.">
 <meta property="og:url" content="https://business-wealth-coach.vercel.app/">
 <meta property="og:image" content="https://business-wealth-coach.vercel.app/hero-accounting-fitness.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Business Wealth Coach | Accountancy, Tax & Profit-to-Wealth Advice">
-<meta name="twitter:description" content="Strategic accountancy, tax and business wealth coaching for coaches, creators, fitness businesses and gym owners who want to turn profit into personal wealth.">
+<meta name="twitter:description" content="Strategic accountancy, tax and business wealth coaching for coaches, creators, fitness businesses and gym owners who want to turn profit into personal wealth. Book a call, message on WhatsApp or start onboarding online.">
 <meta name="twitter:image" content="https://business-wealth-coach.vercel.app/hero-accounting-fitness.webp">
 <meta name="theme-color" content="#050505">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"AccountingService","name":"Business Wealth Coach","url":"https://business-wealth-coach.vercel.app/","logo":"https://business-wealth-coach.vercel.app/business-wealth-coach-logo-light.webp","image":"https://business-wealth-coach.vercel.app/hero-accounting-fitness.webp","slogan":"More from your business. More for your future.","description":"Strategic accountancy, tax and business wealth coaching for coaches, creators, fitness businesses and gym owners who want to turn profit into personal wealth.","areaServed":"United Kingdom","sameAs":["https://www.instagram.com/joshxelkins/","https://www.youtube.com/@BusinessWealthCoach"],"serviceType":["Accountancy","Tax planning","Business wealth coaching","Management accounts","Cash-flow planning"],"audience":{"@type":"Audience","audienceType":"Business owners, coaches, creators, fitness and wellness businesses, and gym owners"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AccountingService","name":"Business Wealth Coach","url":"https://business-wealth-coach.vercel.app/","logo":"https://business-wealth-coach.vercel.app/business-wealth-coach-logo-light.webp","image":"https://business-wealth-coach.vercel.app/hero-accounting-fitness.webp","slogan":"More from your business. More for your future.","description":"Strategic accountancy, tax and business wealth coaching for coaches, creators, fitness businesses and gym owners who want to turn profit into personal wealth. Book a call, message on WhatsApp or start onboarding online.","areaServed":"United Kingdom","sameAs":["https://www.instagram.com/joshxelkins/","https://www.youtube.com/@BusinessWealthCoach"],"serviceType":["Accountancy","Tax planning","Business wealth coaching","Management accounts","Cash-flow planning"],"audience":{"@type":"Audience","audienceType":"Business owners, coaches, creators, fitness and wellness businesses, and gym owners"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Business Wealth Coach","url":"https://business-wealth-coach.vercel.app/","publisher":{"@type":"Organization","name":"Business Wealth Coach Ltd"}}</script>
 <!-- /SEO -->
 <!-- Analytics -->
@@ -212,7 +212,8 @@ body{background:#000;color:#fff}
   box-shadow:0 0 18px rgba(18,223,227,.35)
 }
 .switching-close{color:#fff!important;font-weight:900}
-.switching-statement .pill{margin-top:14px}
+.switching-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
+.switching-actions .pill{margin-top:0}
 
 .package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .package-card{
@@ -254,7 +255,11 @@ body{background:#000;color:#fff}
 .featured-package .package-inherits{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#fff}
 .package-inherits b{display:block;color:#fff;margin-bottom:3px}
 .package-inherits + .package-features{margin-top:14px}
-.package-card .pill{margin-top:auto;width:max-content}
+.package-card .pill{width:max-content}
+.package-cta-stack{margin-top:auto;display:grid;gap:12px;align-items:start}
+.package-question{margin:0;color:#fff;font-weight:900;font-size:15px;line-height:1.35}
+.package-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.package-actions .pill{margin-top:0}
 .package-price{color:#f43c7b;font-weight:900;margin:8px 0 6px;font-size:30px;letter-spacing:-.035em}
 .package-price span{font-size:16px;color:#fff}
 .package-price s{color:#d26492;text-decoration-color:#f43c7b;text-decoration-thickness:2px}
@@ -627,6 +632,15 @@ body{background:#000;color:#fff}
   font-size:28px;
   letter-spacing:-.04em
 }
+.packages-cta p{
+  margin:10px 0 0;
+  max-width:none;
+  color:#d7d7d7;
+  font-size:18px;
+  line-height:1.55
+}
+.packages-cta .package-helper-main{white-space:nowrap}
+.packages-cta .package-helper-note{color:#12dfe3}
 .cta-buttons{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
 @media(max-width:700px){
   .packages-cta{
@@ -634,6 +648,7 @@ body{background:#000;color:#fff}
     align-items:flex-start
   }
   .cta-buttons{justify-content:flex-start}
+  .packages-cta .package-helper-main{white-space:normal}
 }
 
 .onboarding-section{padding-top:40px}
@@ -804,7 +819,7 @@ footer{
 <nav class="shell">
   <a class="brand" href="#top" aria-label="Business Wealth Coach home"><img class="brand-logo" src="business-wealth-coach-logo-light.webp" alt="Business Wealth Coach"></a>
   <div class="links"><a href="#who-i-help">Who we help</a><a href="#difference">Why us</a><a href="#packages">Packages</a></div>
-  <a class="pill light magnetic" href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">Got a question? Let's chat!</a>
+  <a class="pill light magnetic" href="https://calendly.com/business-wealth-coach/20mins">Book a call</a>
 </nav>
 
 <section class="hero" id="top">
@@ -947,7 +962,7 @@ footer{
           <li><span class="feature-status included">✓</span><span>Payroll For 1 Person</span></li>
           <li><span class="feature-status included">✓</span><span>WhatsApp Accountancy Support</span></li>
         </ul>
-        <a class="pill magnetic" href="onboarding.html?package=Starter">Ready to start? Complete our onboarding!</a>
+        <div class="package-cta-stack"><p class="package-question">Ready to talk it through?</p><div class="package-actions"><a class="pill light magnetic" href="https://calendly.com/business-wealth-coach/20mins">Book a call</a><a class="pill secondary magnetic" href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">WhatsApp me</a></div></div>
       </article>
 
       <article class="package-card tilt reveal featured-package">
@@ -968,7 +983,7 @@ footer{
           <li><span class="feature-status included">✓</span><span>Payroll For Up To 2 People</span></li>
           <li><span class="feature-status included">✓</span><span>Proactive WhatsApp Support</span></li>
         </ul>
-        <a class="pill light magnetic" href="onboarding.html?package=Standard">Ready to start? Complete our onboarding!</a>
+        <div class="package-cta-stack"><p class="package-question">Ready to talk it through?</p><div class="package-actions"><a class="pill light magnetic" href="https://calendly.com/business-wealth-coach/20mins">Book a call</a><a class="pill secondary magnetic" href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">WhatsApp me</a></div></div>
       </article>
 
       <article class="package-card tilt reveal premium-package">
@@ -993,7 +1008,7 @@ footer{
           <li><span class="feature-status included">✓</span><span>Payroll For Up To 3 People</span></li>
           <li><span class="feature-status included">✓</span><span>Priority WhatsApp Support</span></li>
         </ul>
-        <a class="pill magnetic" href="onboarding.html?package=Signature">Ready to start? Complete our onboarding!</a>
+        <div class="package-cta-stack"><p class="package-question">Ready to talk it through?</p><div class="package-actions"><a class="pill light magnetic" href="https://calendly.com/business-wealth-coach/20mins">Book a call</a><a class="pill secondary magnetic" href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">WhatsApp me</a></div></div>
       </article>
     </div>
 
@@ -1001,11 +1016,9 @@ footer{
 
     <div class="packages-cta reveal">
       <div>
-        <span class="eyebrow">NOT SURE WHICH FITS?</span>
-        <h3>We’ll help you choose the right tier of support.</h3>
-      </div>
-      <div class="cta-buttons">
-        <a class="pill light magnetic" href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">Let's have a chat!</a>
+        <span class="eyebrow">NOT SURE WHICH PACKAGE IS RIGHT FOR YOU, OR HAVE A QUESTION?</span>
+        <p class="package-helper-main">We’re here to help you find the right level of support and make sure you have everything you need to decide.</p>
+        <p class="package-helper-note">Use the links above to book a call or send me a message on WhatsApp.</p>
       </div>
     </div>
 
@@ -1030,8 +1043,11 @@ footer{
         <li>Ongoing deadlines and outstanding work</li>
       </ul>
       <p>You should not have to spend your time coordinating the move between two firms. We will manage the transition, keep you updated, and make sure the switch is as smooth as possible.</p>
-      <p class="switching-close">Ready to switch? Complete the onboarding form below.</p>
-      <a class="pill light magnetic" href="onboarding.html">Let's start working together!</a>
+      <p class="switching-close">Ready to switch? Complete the onboarding form below, or book a call.</p>
+      <div class="switching-actions">
+        <a class="pill light magnetic" href="onboarding.html">Start onboarding</a>
+        <a class="pill secondary magnetic" href="https://calendly.com/business-wealth-coach/20mins">Book a call</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1126,18 +1142,19 @@ footer{
 <section class="cta" id="contact">
   <div class="shell reveal">
     <img class="contact-mark" src="business-wealth-coach-logo-light.webp" alt="Business Wealth Coach">
-    <div class="eyebrow">CHAT OR ONBOARDING</div>
+    <div class="eyebrow">THREE WAYS TO START</div>
     <h2>Want an accountant who understands your business and helps you build personal wealth?</h2>
-    <p class="contact-subline">Message on WhatsApp for a quick chat, or complete the short onboarding if you are ready to explore working together.</p>
+    <p class="contact-subline">Book a discovery call for a proper conversation, WhatsApp me for a quick question, or start onboarding if you are ready to share the detail.</p>
     <div class="cta-buttons">
-      <a class="pill light magnetic" href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">Got a question? Let's chat!</a>
-      <a class="pill secondary magnetic" href="onboarding.html">Ready to start? Complete our onboarding!</a>
+      <a class="pill light magnetic" href="https://calendly.com/business-wealth-coach/20mins">Book a call</a>
+      <a class="pill secondary magnetic" href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">WhatsApp me</a>
+      <a class="pill secondary magnetic" href="onboarding.html">Start onboarding</a>
     </div>
   </div>
 </section>
 
 <footer class="shell">
-  <div class="footergrid"><div><img class="footer-logo" src="business-wealth-coach-logo-light.webp" alt="Business Wealth Coach"><p class="footer-intro">Accounting, tax and business wealth coaching for coaches, creators, fitness entrepreneurs and gym owners who want to keep more of what they earn and build personal wealth.</p></div><div><b>Services</b><a href="#who-i-help">Who we help</a><a href="#difference">Why us</a><a href="#packages">Packages</a><a href="#top">Top</a></div><div><b>Contact</b><a href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">Got a question? Let's chat!</a><a href="onboarding.html">Ready to start? Complete our onboarding!</a></div><div><b>Follow</b><div class="footer-social"><a class="social-link" href="https://www.instagram.com/joshxelkins/" target="_blank" rel="noopener" aria-label="Business Wealth Coach on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.8A4.2 4.2 0 1 1 7.8 12 4.2 4.2 0 0 1 12 7.8Zm0 2A2.2 2.2 0 1 0 14.2 12 2.2 2.2 0 0 0 12 9.8Zm4.45-3.15a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/></svg></a><a class="social-link" href="https://www.youtube.com/@BusinessWealthCoach" target="_blank" rel="noopener" aria-label="Business Wealth Coach on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3.1 3.1 0 0 0-2.2-2.2C17.5 4.5 12 4.5 12 4.5s-5.5 0-7.4.5a3.1 3.1 0 0 0-2.2 2.2A32.4 32.4 0 0 0 2 12a32.4 32.4 0 0 0 .4 4.8A3.1 3.1 0 0 0 4.6 19c1.9.5 7.4.5 7.4.5s5.5 0 7.4-.5a3.1 3.1 0 0 0 2.2-2.2A32.4 32.4 0 0 0 22 12a32.4 32.4 0 0 0-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg></a></div></div></div><div class="footer-bottom"><span>© 2026 Business Wealth Coach Ltd. All rights reserved.</span><div class="legal-links"><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-policy.html">Cookie Policy</a></div></div>
+  <div class="footergrid"><div><img class="footer-logo" src="business-wealth-coach-logo-light.webp" alt="Business Wealth Coach"><p class="footer-intro">Accounting, tax and business wealth coaching for coaches, creators, fitness entrepreneurs and gym owners who want to keep more of what they earn and build personal wealth.</p></div><div><b>Services</b><a href="#who-i-help">Who we help</a><a href="#difference">Why us</a><a href="#packages">Packages</a><a href="#top">Top</a></div><div><b>Contact</b><a href="https://calendly.com/business-wealth-coach/20mins">Book a call</a><a href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">WhatsApp me</a><a href="onboarding.html">Start onboarding</a></div><div><b>Follow</b><div class="footer-social"><a class="social-link" href="https://www.instagram.com/joshxelkins/" target="_blank" rel="noopener" aria-label="Business Wealth Coach on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.8A4.2 4.2 0 1 1 7.8 12 4.2 4.2 0 0 1 12 7.8Zm0 2A2.2 2.2 0 1 0 14.2 12 2.2 2.2 0 0 0 12 9.8Zm4.45-3.15a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/></svg></a><a class="social-link" href="https://www.youtube.com/@BusinessWealthCoach" target="_blank" rel="noopener" aria-label="Business Wealth Coach on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a3.1 3.1 0 0 0-2.2-2.2C17.5 4.5 12 4.5 12 4.5s-5.5 0-7.4.5a3.1 3.1 0 0 0-2.2 2.2A32.4 32.4 0 0 0 2 12a32.4 32.4 0 0 0 .4 4.8A3.1 3.1 0 0 0 4.6 19c1.9.5 7.4.5 7.4.5s5.5 0 7.4-.5a3.1 3.1 0 0 0 2.2-2.2A32.4 32.4 0 0 0 22 12a32.4 32.4 0 0 0-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg></a></div></div></div><div class="footer-bottom"><span>© 2026 Business Wealth Coach Ltd. All rights reserved.</span><div class="legal-links"><a href="privacy-policy.html">Privacy Policy</a><a href="cookie-policy.html">Cookie Policy</a></div></div>
 </footer>
 <script>
 document.documentElement.classList.add('animate-ready');
@@ -1203,11 +1220,18 @@ if(split){split.addEventListener('mousemove',e=>{let r=split.getBoundingClientRe
     var href = link.getAttribute('href') || '';
     var absoluteHref = link.href || href;
     var locationName = sectionName(link);
+    var isCalendly = absoluteHref.indexOf('calendly.com/business-wealth-coach') !== -1;
+    var packageCard = link.closest('.package-card');
     var eventName = '';
     var data = { location: locationName };
     if (href.indexOf('wa.me/') !== -1 || absoluteHref.indexOf('wa.me/') !== -1) {
       eventName = 'WhatsApp Click';
-      data.intent = absoluteHref.indexOf('question') !== -1 ? 'question' : 'chat';
+      data.intent = absoluteHref.indexOf('sent%20my') !== -1 ? 'onboarding_follow_up' : 'question';
+      if (packageCard && packageCard.querySelector('h3')) data.package_interest = clean(packageCard.querySelector('h3').textContent);
+    } else if (isCalendly) {
+      eventName = 'Calendly Click';
+      data.intent = 'discovery_call';
+      if (packageCard && packageCard.querySelector('h3')) data.package_interest = clean(packageCard.querySelector('h3').textContent);
     } else if (href.indexOf('onboarding.html') !== -1) {
       eventName = locationName === 'packages' ? 'Package Onboarding Click' : 'Onboarding Click';
       try {
@@ -1226,6 +1250,17 @@ if(split){split.addEventListener('mousemove',e=>{let r=split.getBoundingClientRe
     }
     if (!eventName) return;
     window.trackSiteEvent(eventName, data);
+    if (isCalendly && !event.defaultPrevented && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && link.target !== '_blank') {
+      event.preventDefault();
+      window.setTimeout(function(){
+        if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
+          window.Calendly.initPopupWidget({ url: 'https://calendly.com/business-wealth-coach/20mins' });
+        } else {
+          window.location.href = absoluteHref;
+        }
+      }, 160);
+      return;
+    }
     if ((href.indexOf('wa.me/') !== -1 || absoluteHref.indexOf('wa.me/') !== -1) && !event.defaultPrevented && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && link.target !== '_blank') {
       event.preventDefault();
       window.setTimeout(function(){ window.location.href = absoluteHref; }, 160);
@@ -1235,7 +1270,7 @@ if(split){split.addEventListener('mousemove',e=>{let r=split.getBoundingClientRe
   if (form) {
     var started = false;
     var sentMilestones = {};
-    var fields = Array.prototype.slice.call(form.querySelectorAll('input, select, textarea'));
+    var fields = Array.prototype.slice.call(form.querySelectorAll('input:not([type="hidden"]):not([name="website"]), select, textarea'));
     function completionPercent(){
       var complete = fields.filter(function(field){ return clean(field.value).length > 0; }).length;
       return Math.round((complete / fields.length) * 100);
@@ -1265,4 +1300,7 @@ if(split){split.addEventListener('mousemove',e=>{let r=split.getBoundingClientRe
 })();
 </script>
 <!-- /Site event tracking -->
-</body></html>
+<!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<!-- Calendly link widget end --></body></html>

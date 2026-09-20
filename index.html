@@ -282,6 +282,55 @@ body{background:#000;color:#fff}
 .featured-package{border-color:#12dfe3;transform:translateY(-14px);box-shadow:0 0 0 1px rgba(18,223,227,.28) inset,0 0 90px rgba(18,223,227,.12);background:linear-gradient(180deg,#111 0%,#0b0b0b 100%)}
 .premium-package{border-color:rgba(244,60,123,.42);box-shadow:0 0 0 1px rgba(244,60,123,.14) inset,0 0 70px rgba(244,60,123,.08)}
 .package-note{color:#858585;font-size:13px;line-height:1.45;margin:24px 0 0}
+.package-addons{
+  margin-top:28px;
+  padding:28px 0 0;
+  border-top:1px solid #252525;
+  display:grid;
+  grid-template-columns:1.1fr .95fr .95fr;
+  gap:20px;
+  align-items:stretch
+}
+.package-addons-copy h3{margin:8px 0 6px;font-size:28px;letter-spacing:-.04em;white-space:nowrap}
+.package-addons-copy p{margin:0;color:#929292;font-size:14px;line-height:1.45}
+.package-addon{
+  min-height:124px;
+  padding:20px;
+  border:1px solid rgba(18,223,227,.3);
+  border-radius:18px;
+  background:linear-gradient(145deg,rgba(18,223,227,.08),#0d0d0d 52%,#101010);
+  box-shadow:0 0 0 1px rgba(18,223,227,.06) inset,0 18px 55px rgba(0,0,0,.2);
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px 18px;
+  align-content:center;
+  align-items:baseline;
+  position:relative;
+  overflow:hidden
+}
+.package-addon:before{
+  content:"";
+  position:absolute;
+  width:150px;
+  height:150px;
+  right:-70px;
+  top:-85px;
+  border-radius:50%;
+  background:rgba(18,223,227,.12);
+  filter:blur(30px);
+  pointer-events:none
+}
+.package-addon.addon-vat{
+  border-color:rgba(244,60,123,.34);
+  background:linear-gradient(145deg,rgba(244,60,123,.07),#0d0d0d 52%,#101010);
+  box-shadow:0 0 0 1px rgba(244,60,123,.06) inset,0 18px 55px rgba(0,0,0,.2)
+}
+.package-addon.addon-vat:before{background:rgba(244,60,123,.13)}
+.package-addon strong,.package-addon span{position:relative;z-index:1}
+.package-addon strong{font-size:19px;color:#fff}
+.package-addon-price{color:#f43c7b;font-size:20px;font-weight:900;white-space:nowrap}
+.package-addon.addon-bookkeeping .package-addon-price{color:#12dfe3}
+.package-addon span:last-child{grid-column:1/-1;color:#aaa;font-size:13px;line-height:1.45}
 
 .fit-snapshot{
   padding-top:72px;
@@ -505,6 +554,8 @@ body{background:#000;color:#fff}
   .package-grid,.journey-track,.difference-grid{grid-template-columns:1fr}
   .self-employed-package,.limited-package-intro{grid-template-columns:1fr}
   .self-employed-package .package-features{grid-template-columns:1fr}
+  .package-addons{grid-template-columns:1fr;gap:20px}
+  .package-addons-copy h3{white-space:normal}
   .wealth-statement{padding:50px 24px}
   .difference-title{position:static}
   .difference-list{grid-template-columns:1fr}
@@ -631,37 +682,47 @@ body{background:#000;color:#fff}
 
 .packages-cta{
   margin-top:26px;
-  padding:28px 30px;
+  padding:30px;
   border:1px solid #252525;
   border-radius:20px;
-  display:flex;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
   align-items:center;
-  justify-content:space-between;
-  gap:24px;
-  background:#0b0b0b
+  gap:42px;
+  background:linear-gradient(120deg,rgba(18,223,227,.07),#0b0b0b 42%,rgba(244,60,123,.06));
+  position:relative;
+  overflow:hidden
+}
+.packages-cta:before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:2px;
+  background:linear-gradient(90deg,#12dfe3 0%,rgba(18,223,227,.35) 42%,rgba(244,60,123,.35) 58%,#f43c7b 100%)
 }
 .packages-cta h3{
   margin:8px 0 0;
-  font-size:28px;
+  font-size:32px;
   letter-spacing:-.04em
 }
 .packages-cta p{
   margin:10px 0 0;
-  max-width:none;
-  color:#d7d7d7;
-  font-size:18px;
-  line-height:1.55
+  max-width:720px;
+  color:#bcbcbc;
+  font-size:16px;
+  line-height:1.5
 }
-.packages-cta .package-helper-main{white-space:nowrap}
-.packages-cta .package-helper-note{color:#12dfe3}
 .cta-buttons{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
 @media(max-width:700px){
   .packages-cta{
-    flex-direction:column;
-    align-items:flex-start
+    grid-template-columns:1fr;
+    align-items:start;
+    gap:22px;
+    padding:26px 22px
   }
   .cta-buttons{justify-content:flex-start}
-  .packages-cta .package-helper-main{white-space:normal}
 }
 
 .onboarding-section{padding-top:40px}
@@ -1009,7 +1070,7 @@ footer{
         <div class="package-tagline">Build your base</div>
         <div class="package-price"><s>£150</s> <span>/ month</span></div>
         <div class="package-offer"><strong>£90 <span>/ month</span></strong><em>Founding Client Offer (40% Off)</em><span class="offer-note">Introductory pricing for a limited number of new clients.<br>Once these places are filled, usual pricing will apply.</span></div>
-        <p>For businesses that want the essentials handled properly, with clear monthly visibility over their financial performance.</p>
+        <p>For businesses that want the essentials handled properly, with reliable compliance and direct access to accountancy support.</p>
         <div class="package-position">Compliance + Visibility</div>
         <div class="package-inherits"><b>Included in Starter</b><span>The base package every tier is built from.</span></div>
         <ul class="package-features">
@@ -1017,7 +1078,7 @@ footer{
           <li><span class="feature-status included">✓</span><span>Corporation Tax Return</span></li>
           <li><span class="feature-status included">✓</span><span>Confirmation Statement</span></li>
           <li><span class="feature-status included">✓</span><span>1 Director Self Assessment</span></li>
-          <li><span class="feature-status included">✓</span><span>Monthly Management Accounts</span></li>
+          <li><span class="feature-status included">✓</span><span>Annual Tax Efficiency Review</span></li>
           <li><span class="feature-status included">✓</span><span>Payroll For 1 Person</span></li>
           <li><span class="feature-status included">✓</span><span>WhatsApp Accountancy Support</span></li>
         </ul>
@@ -1029,17 +1090,18 @@ footer{
         <span class="num">02</span>
         <h3>Standard</h3>
         <div class="package-tagline">Make consistent progress</div>
-        <div class="package-price"><s>£250</s> <span>/ month</span></div>
-        <div class="package-offer"><strong>£150 <span>/ month</span></strong><em>Founding Client Offer (40% Off)</em><span class="offer-note">Introductory pricing for a limited number of new clients.<br>Once these places are filled, usual pricing will apply.</span></div>
+        <div class="package-price"><s>£225</s> <span>/ month</span></div>
+        <div class="package-offer"><strong>£135 <span>/ month</span></strong><em>Founding Client Offer (40% Off)</em><span class="offer-note">Introductory pricing for a limited number of new clients.<br>Once these places are filled, usual pricing will apply.</span></div>
         <p>For owners who want regular financial reviews, better visibility and proactive support before decisions are made.</p>
         <div class="package-position">Visibility + Guidance</div>
         <div class="package-inherits"><b>Includes all Starter features</b><span>Plus the extra support below.</span></div>
         <ul class="package-features">
+          <li><span class="feature-status included">✓</span><span>Monthly Management Accounts</span></li>
           <li><span class="feature-status included">✓</span><span>VAT Returns</span></li>
           <li><span class="feature-status included">✓</span><span>Monthly Business Performance Meeting</span></li>
           <li><span class="feature-status included">✓</span><span>Ongoing Tax Efficiency Advice</span></li>
-          <li><span class="feature-status included">✓</span><span>Salary & Dividend Planning</span></li>
-          <li><span class="feature-status included">✓</span><span>Payroll For Up To 2 People</span></li>
+          <li><span class="feature-status included">✓</span><span>Ongoing Salary & Dividend Planning</span></li>
+          <li><span class="feature-status included">✓</span><span>Payroll For Up To 3 People</span></li>
           <li><span class="feature-status included">✓</span><span>Proactive WhatsApp Support</span></li>
         </ul>
         <div class="package-cta-stack"><p class="package-question">Ready to talk it through?</p><div class="package-actions"><a class="pill light magnetic" href="https://calendly.com/business-wealth-coach/20mins">Book a call</a><a class="pill secondary magnetic" href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">WhatsApp me</a></div></div>
@@ -1049,8 +1111,8 @@ footer{
         <span class="num">03</span>
         <h3>Signature</h3>
         <div class="package-tagline">Maximise performance</div>
-        <div class="package-price"><s>£350</s> <span>/ month</span></div>
-        <div class="package-offer"><strong>£210 <span>/ month</span></strong><em>Founding Client Offer (40% Off)</em><span class="offer-note">Introductory pricing for a limited number of new clients.<br>Once these places are filled, usual pricing will apply.</span></div>
+        <div class="package-price"><s>£300</s> <span>/ month</span></div>
+        <div class="package-offer"><strong>£180 <span>/ month</span></strong><em>Founding Client Offer (40% Off)</em><span class="offer-note">Introductory pricing for a limited number of new clients.<br>Once these places are filled, usual pricing will apply.</span></div>
         <p>For ambitious businesses that want a more complete outsourced finance function, with bookkeeping, planning and proactive financial insight.</p>
         <div class="package-position">Control + Planning + Performance</div>
         <div class="package-inherits"><b>Includes all Standard features</b><span>Plus the outsourced finance function support below.</span></div>
@@ -1062,22 +1124,44 @@ footer{
           <li><span class="feature-status included">✓</span><span>Quarterly Budget Vs Actual Review</span></li>
           <li><span class="feature-status included">✓</span><span>Quarterly Tax Review</span></li>
           <li><span class="feature-status included">✓</span><span>Quarterly Debtor Review</span></li>
-          <li><span class="feature-status included">✓</span><span>Weekly KPI Performance Report</span></li>
+          <li><span class="feature-status included">✓</span><span>KPI Dashboard</span></li>
           <li><span class="feature-status included">✓</span><span>Scenario Modelling</span></li>
-          <li><span class="feature-status included">✓</span><span>Payroll For Up To 3 People</span></li>
+          <li><span class="feature-status included">✓</span><span>Payroll For Up To 5 People</span></li>
           <li><span class="feature-status included">✓</span><span>Priority WhatsApp Support</span></li>
         </ul>
         <div class="package-cta-stack"><p class="package-question">Ready to talk it through?</p><div class="package-actions"><a class="pill light magnetic" href="https://calendly.com/business-wealth-coach/20mins">Book a call</a><a class="pill secondary magnetic" href="https://wa.me/447957401540?text=Hi%2C%20I%27ve%20got%20a%20question%20about%20Business%20Wealth%20Coach.">WhatsApp me</a></div></div>
       </article>
     </div>
 
-    <p class="package-note reveal">*Bookkeeping is subject to an agreed monthly transaction allowance. Additional volume or complexity may incur an additional fee.</p>
+    <div class="package-addons reveal" aria-label="Optional package add-ons">
+      <div class="package-addons-copy">
+        <span class="eyebrow">Optional add-ons</span>
+        <h3>Extra support when you need it.</h3>
+        <p>Available alongside packages where the service is not already included.</p>
+      </div>
+      <div class="package-addon addon-bookkeeping">
+        <strong>Bookkeeping</strong>
+        <span class="package-addon-price">From £25 / month</span>
+        <span>Price depends on monthly transaction volume.</span>
+      </div>
+      <div class="package-addon addon-vat">
+        <strong>VAT returns</strong>
+        <span class="package-addon-price">£50 / month</span>
+        <span>Preparation and submission of your VAT return.</span>
+      </div>
+    </div>
 
-    <div class="packages-cta reveal">
-      <div>
-        <span class="eyebrow">NOT SURE WHICH PACKAGE IS RIGHT FOR YOU, OR HAVE A QUESTION?</span>
-        <p class="package-helper-main">We’re here to help you find the right level of support and make sure you have everything you need to decide.</p>
-        <p class="package-helper-note">Use the links above to book a call or send me a message on WhatsApp.</p>
+    <p class="package-note reveal">*Bookkeeping pricing and included transaction allowances depend on monthly transaction volume. Additional volume or complexity may incur an additional fee.</p>
+
+    <div class="packages-cta reveal" id="package-help" aria-label="Help choosing a package">
+      <div class="packages-cta-copy">
+        <span class="eyebrow">NEED HELP CHOOSING?</span>
+        <h3>Let’s find the right fit.</h3>
+        <p>Tell me where your business is now and what you need help with. We’ll work out which package gives you the right level of support.</p>
+      </div>
+      <div class="cta-buttons">
+        <a class="pill light magnetic" href="https://calendly.com/business-wealth-coach/20mins">Book a call</a>
+        <a class="pill secondary magnetic" href="https://wa.me/447957401540?text=Hi%2C%20I%27d%20like%20some%20help%20choosing%20the%20right%20Business%20Wealth%20Coach%20package.">WhatsApp me</a>
       </div>
     </div>
 
